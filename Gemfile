@@ -41,3 +41,4 @@ gem "thin", :group => :development
 gem "rspec-rails", :group => [:development, :test]
 gem "spork", :group => [:development, :test]
 
+gem 'spree', :git => 'git://github.com/spree/spree.git'
