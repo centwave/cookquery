@@ -40,5 +40,6 @@ gem "haml-rails", :group => :development
 gem "thin", :group => :development
 gem "rspec-rails", :group => [:development, :test]
 gem "spork", :group => [:development, :test]
-
-gem 'spree', :git => 'git://github.com/spree/spree.git'
+gem 'spree', '1.3.1'
+gem 'spree_gateway', :github => 'spree/spree_gateway', :branch => '1-3-stable'
+gem 'spree_auth_devise', :github => 'spree/spree_auth_devise', :branch => '1-3-stable'
