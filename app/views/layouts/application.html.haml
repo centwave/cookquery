@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    %title= content_for?(:title) ? yield(:title) : "App_Name"
+    %meta{:content => content_for?(:description) ? yield(:description) : "App_Name", :name => "description"}
+    = stylesheet_link_tag :application, :media => "all"
+    = stylesheet_link_tag :home, :media => "all"
+    = csrf_meta_tags
+    /[if lt IE 9] %script{:src => 'http://html5shim.googlecode.com/svn/trunk/html5.js'}
+    = yield(:head)
+  %body
+    %header
+      = render 'layouts/navigation'
+      = render 'layouts/hero'
+
+    .container.marketing
+      = render 'layouts/messages'
+      = yield
+      
+      %footer
+        = render 'layouts/footer'
+
+    = javascript_include_tag :application
+
+    :javascript
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel();
+        })
+      }(window.jQuery)
+
